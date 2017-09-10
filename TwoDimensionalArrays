@@ -1,1 +1,35 @@
+/**
+ * 从键盘读入一个不规则的二维数组
+ */
+
 import java.util.Scanner;
+public class TwoDimensionalArrays
+{
+
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int m=sc.nextInt();//二维数组的行数
+        int[][]arr=new int[m][];
+        for(int i=0;i<m;i++)
+        {
+            int n=sc.nextInt();//每一行数组元素的个数
+            arr[i]=new int[n];
+            for(int j=0;j<n;j++)
+            {
+                arr[i][j]=sc.nextInt();
+            }
+        }
+//打印出输出的数组元素
+      for(int i=0;i<arr.length;i++)
+        {
+            int count=0;
+            for(int j=0;j<arr[i].length;j++)
+            {
+                System.out.print(arr[i][j]+"  ");
+                count++;
+                if(count==arr[i].length)System.out.println();
+            }
+        }
+    }
+}
